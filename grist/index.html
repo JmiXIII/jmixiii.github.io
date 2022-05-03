@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Grist Inspect</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
-    
+
     <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
-<img id="image" src=""/>
-<div id="title"></div>
-<script>
-  grist.ready({requiredAccess: 'read table'});
-  grist.onRecord(function (record) {
-    document.getElementById('image').src = record.Link;
-    document.getElementById('title').innerText = record.Title;
-  });
-</script>
+    <img id="image" src="" />
+    <div id="title"></div>
+    <script>
+      grist.ready({ requiredAccess: "read table" });
+      grist.onRecord(function (record) {
+        document.getElementById("image").src = record.Link;
+        document.getElementById("title").innerText = record.Title;
+      });
+    </script>
   </head>
   <body>
-        <h1> Hello worlds </h1>
+    <h1>Hello worlds</h1>
   </body>
 </html>
