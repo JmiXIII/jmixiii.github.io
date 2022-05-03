@@ -3,9 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>Grist Inspect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://docs.getgrist.com/grist-plugin-api.js"></script>
   </head>
   <body>
-    <h1> Hello world </h1>
-    </ul>
+        <h1> Hello world </h1>
+        <div id="app">
+      <div class="status" v-if="status">
+        <template v-if="status === 'waiting'">
+          <p>Waiting for data...</p>
+          <ul>
+            <li v-bind:class="[tableConnected ? 'done' : '']">I need <b>read table</b> access.</li>
+            <li v-bind:class="[haveRows ? 'done' : '']">I need at least one row of data.</li>
+            <li v-bind:class="[rowConnected ? 'done' : '']">I need <b>Select By</b> set.</li>
+          </ul>
+          <p>Examples:</p>
+          <ul>
+            <li><a class="button" href="index.html?demo=1">A filled out invoice</a></li>
+            <li><a class="button" href="index.html?labels=1">A labelled invoice</a></li>
+          </ul>
+        </template>
+        <template v-else>
+          {{ status }}
+        </template>
+      </div>
+
+    <div 
   </body>
 </html>
